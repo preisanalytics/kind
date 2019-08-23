@@ -155,6 +155,8 @@ func createNode(name, image, clusterLabel, role string, mounts []cri.Mount, port
 		"--volume", "/lib/modules:/lib/modules:ro",
 		"--hostname", name, // make hostname match container name
 		"--name", name, // ... and set the container name
+		"--network kind",
+		"--ip 192.168.64.10",
 		// label the node with the cluster ID
 		"--label", clusterLabel,
 		// label the node with the role ID
